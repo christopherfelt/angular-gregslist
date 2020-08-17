@@ -1,7 +1,74 @@
 <div class="container-fluid">
   <div class="row d-flex justify-content-center">
-    <div class="col-8">
-      <app-cars></app-cars>
+    <div class="col-8 d-flex justify-content-center">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="pills-cars-tab"
+            data-toggle="pill"
+            href="#pills-cars"
+            role="tab"
+            aria-controls="pills-cars"
+            aria-selected="true"
+            >Cars</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-houses-tab"
+            data-toggle="pill"
+            href="#pills-houses"
+            role="tab"
+            aria-controls="pills-houses"
+            aria-selected="false"
+            >Houses</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-jobs-tab"
+            data-toggle="pill"
+            href="#pills-jobs"
+            role="tab"
+            aria-controls="pills-jobs"
+            aria-selected="false"
+            >Jobs</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-8 d-flex justify-content-start">
+      <div class="tab-content" id="pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="pills-cars"
+          role="tabpanel"
+          aria-labelledby="pills-cars-tab"
+        >
+          <app-cars></app-cars>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="pills-houses"
+          role="tabpanel"
+          aria-labelledby="pills-houses-tab"
+        >
+          <app-houses></app-houses>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="pills-jobs"
+          role="tabpanel"
+          aria-labelledby="pills-jobs-tab"
+        >
+          <app-jobs></app-jobs>
+        </div>
+      </div>
     </div>
   </div>
 </div>

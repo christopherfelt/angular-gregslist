@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Car } from '../models/Car';
+import { House } from '../models/house';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,12 +13,12 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root',
 })
-export class CarService {
-  url: string = 'https://localhost:5001/api/cars';
+export class HouseService {
+  url: string = 'https://localhost:5001/api/houses';
 
   constructor(private http: HttpClient) {}
 
-  getCars(): Observable<Car[]> {
-    return this.http.get<Car[]>(this.url);
+  getHouses(): Observable<House[]> {
+    return this.http.get<House[]>(this.url);
   }
 }
