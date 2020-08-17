@@ -7,6 +7,8 @@
     <p class="card-text">{{ house.description }}</p>
     <h6>Price: {{ house.price }}</h6>
     <h6>Location: {{ house.location }}</h6>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <button type="button" class="btn btn-danger" (click)="onDelete(house)">
+      X
+    </button>
   </div>
 </div>

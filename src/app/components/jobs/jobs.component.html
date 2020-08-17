@@ -1,3 +1,14 @@
-<div class="d-flex m-1">
-  <app-job *ngFor="let job of jobs" [job]="job"></app-job>
+<div>
+  <div class="card-columns m-1">
+    <app-add-item
+      [ItemType]="itemType"
+      (addItem)="addJob($event)"
+    ></app-add-item>
+
+    <app-job
+      *ngFor="let job of jobs"
+      [job]="job"
+      (deleteJob)="deleteJob($event)"
+    ></app-job>
+  </div>
 </div>

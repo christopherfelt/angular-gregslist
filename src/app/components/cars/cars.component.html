@@ -1,3 +1,14 @@
-<div class="d-flex m-1">
-  <app-car *ngFor="let car of cars" [car]="car"></app-car>
+<div>
+  <div class="card-columns m-1">
+    <app-add-item
+      [ItemType]="itemType"
+      (addItem)="addCar($event)"
+    ></app-add-item>
+
+    <app-car
+      *ngFor="let car of cars"
+      [car]="car"
+      (deleteCar)="deleteCar($event)"
+    ></app-car>
+  </div>
 </div>

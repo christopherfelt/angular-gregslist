@@ -1,1 +1,59 @@
-<p>add-item works!</p>
+<div class="card">
+  <form class="form-group border p-3 m-3" (ngSubmit)="onSubmit()">
+    <h6>Add new {{ ItemType }}</h6>
+    <input
+      type="text"
+      name="title"
+      class="form-control mt-1"
+      [(ngModel)]="title"
+      placeholder="Add title ...."
+    />
+    <input
+      type="text"
+      name="description"
+      class="form-control mt-1"
+      [(ngModel)]="description"
+      placeholder="Add description ...."
+    />
+    <input
+      type="text"
+      name="price"
+      class="form-control mt-1"
+      *ngIf="isCar || isHouse"
+      [(ngModel)]="price"
+      placeholder="Add price ...."
+    />
+    <input
+      type="text"
+      name="rate"
+      class="form-control mt-1"
+      *ngIf="isJob"
+      [(ngModel)]="rate"
+      placeholder="Add rate ...."
+    />
+    <input
+      type="text"
+      name="hours"
+      class="form-control mt-1"
+      *ngIf="isJob"
+      [(ngModel)]="hours"
+      placeholder="Add hours ...."
+    />
+    <input
+      type="text"
+      name="location"
+      class="form-control mt-1"
+      *ngIf="isHouse"
+      [(ngModel)]="location"
+      placeholder="Add location ...."
+    />
+    <input
+      type="text"
+      name="imgurl"
+      class="form-control mt-1"
+      [(ngModel)]="imgurl"
+      placeholder="Add image ...."
+    />
+    <input type="submit" value="submit" class="btn btn-primary mt-1" />
+  </form>
+</div>

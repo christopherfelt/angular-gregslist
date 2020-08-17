@@ -6,6 +6,8 @@
     <h5 class="card-title">{{ car.title }}</h5>
     <p class="card-text">{{ car.description }}</p>
     <h6>Price: {{ car.price }}</h6>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <button type="button" class="btn btn-danger" (click)="onDelete(car)">
+      X
+    </button>
   </div>
 </div>

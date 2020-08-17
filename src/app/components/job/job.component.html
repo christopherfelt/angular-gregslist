@@ -7,6 +7,8 @@
     <p class="card-text">{{ job.description }}</p>
     <h6>Rate: {{ job.rate }}</h6>
     <h6>Hours: {{ job.hours }}</h6>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <button type="button" class="btn btn-danger" (click)="onDelete(job)">
+      X
+    </button>
   </div>
 </div>

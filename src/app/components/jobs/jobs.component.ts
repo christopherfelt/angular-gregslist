@@ -10,6 +10,7 @@ import { Job } from '../../models/job';
 })
 export class JobsComponent implements OnInit {
   jobs: Job[];
+  itemType: string = 'job';
 
   constructor(private jobService: JobService) {}
 
@@ -17,5 +18,16 @@ export class JobsComponent implements OnInit {
     this.jobService.getJobs().subscribe((job) => {
       this.jobs = job;
     });
+  }
+
+  addJob(job: Job) {
+    this.jobService.addJob(job).subscribe((job) => {
+      this.jobs.push(job);
+    });
+  }
+
+  deleteJob(job: Job) {
+    this.jobs = this.jobs.filter((j) => j.id !== job.id);
+    this.jobService.deleteJob(job).subscribe();
   }
 }

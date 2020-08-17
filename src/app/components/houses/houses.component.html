@@ -1,3 +1,14 @@
 <div class="d-flex m-1">
-  <app-house *ngFor="let house of houses" [house]="house"> </app-house>
+  <div class="card-columns m-1">
+    <app-add-item
+      [ItemType]="itemType"
+      (addItem)="addHouse($event)"
+    ></app-add-item>
+
+    <app-house
+      *ngFor="let house of houses"
+      [house]="house"
+      (deleteHouse)="deleteHouse($event)"
+    ></app-house>
+  </div>
 </div>

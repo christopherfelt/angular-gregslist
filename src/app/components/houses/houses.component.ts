@@ -10,6 +10,7 @@ import { House } from '../../models/house';
 })
 export class HousesComponent implements OnInit {
   houses: House[];
+  itemType: string = 'house';
 
   constructor(private houseService: HouseService) {}
 
@@ -17,5 +18,16 @@ export class HousesComponent implements OnInit {
     this.houseService.getHouses().subscribe((house) => {
       this.houses = house;
     });
+  }
+
+  addHouse(house: House) {
+    this.houseService.addHouse(house).subscribe((house) => {
+      this.houses.push(house);
+    });
+  }
+
+  deleteHouse(house: House) {
+    this.houses = this.houses.filter((h) => h.id !== house.id);
+    this.houseService.deleteHouse(house).subscribe();
   }
 }

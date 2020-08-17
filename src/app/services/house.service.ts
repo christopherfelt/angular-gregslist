@@ -21,4 +21,11 @@ export class HouseService {
   getHouses(): Observable<House[]> {
     return this.http.get<House[]>(this.url);
   }
+  addHouse(house: House): Observable<House> {
+    return this.http.post<House>(this.url, house, httpOptions);
+  }
+  deleteHouse(house: House) {
+    const url = this.url + '/' + house.id;
+    return this.http.delete<House>(url, httpOptions);
+  }
 }
